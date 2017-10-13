@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-if [ `whoami` != "$STEAM_USER" ]; then
-	exec gosu $STEAM_USER $0 "$@"
-fi
-
 # We must have at least one writer
 sleep infinity > $DSTA_HOME/console &
 

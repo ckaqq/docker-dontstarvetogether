@@ -13,10 +13,6 @@ if [ "$1" = 'dst-server' ]; then
 
 	# Prepare the shard directory.
 	mkdir -p $CLUSTER_PATH/$SHARD_NAME
-	chown -R $STEAM_USER:$STEAM_USER $CLUSTER_PATH
-
-	# Run via steam user if the command is `dst-server`.
-	set -- gosu $STEAM_USER "$@"
 fi
 
 # Execute the command.
