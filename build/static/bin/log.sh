@@ -15,7 +15,7 @@ elif [ $# -eq 1 ]; then
 			log=$CLUSTER_PATH/$SHARD_NAME/server_log.txt
 			;;
 		--chat)
-			log=$CLUSTER_PATH/$SHARD_NAME/server_log_chat.txt
+			log=$CLUSTER_PATH/$SHARD_NAME/server_chat_log.txt
 			;;
 	esac
 fi
