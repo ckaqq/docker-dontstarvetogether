@@ -22,8 +22,8 @@ RUN dpkg --add-architecture i386 && \
     cd $STEAM_HOME && \
     curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf - 
 
-# 缓存失效开关
-ARG DISABLE_CACHE=1
+# 游戏版本控制
+COPY .game-version /
 
 RUN $STEAM_HOME/steamcmd.sh \
     +login anonymous \
@@ -50,10 +50,10 @@ COPY /docker-entrypoint.sh /
 # HEALTHCHECK --interval=5m --timeout=30s --retries=3 CMD dst-server version --check
 
 # Expose default server port.
-EXPOSE $SERVER_PORT/udp
+# EXPOSE $SERVER_PORT/udp
 
 # Set up a volume for configuration files.
-VOLUME ["$CLUSTER_PATH"]
+VOLUME ["$CLUSTER_PATH", "$DST_HOME/mods"]
 
 # Set entrypoint and default command.
 ENTRYPOINT ["/docker-entrypoint.sh"]
