@@ -3,19 +3,19 @@
 source "`dirname "$0"`/functions.sh"
 
 create_list(){
-	list=$1
-	file=$2
-	must_keep=$3
-	if [[ -f $file ]] && [[ "$must_keep" == "0" ]] ; then
-		return
-	fi
+    list=$1
+    file=$2
+    must_keep=$3
+    if [[ -f $file ]] && [[ "$must_keep" == "0" ]] ; then
+        return
+    fi
 
-	rm -f $file
+    rm -f $file
 
-	if [[ -n "$list" ]] ; then
-		echo $list | tr , '\n' >$file
-		chown $STEAM_USER:$STEAM_USER $file
-	fi
+    if [[ -n "$list" ]] ; then
+        echo $list | tr , '\n' >$file
+        chown $STEAM_USER:$STEAM_USER $file
+    fi
 }
 
 # Create the adminlist.txt file.
