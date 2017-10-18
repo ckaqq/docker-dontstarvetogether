@@ -94,8 +94,6 @@ else
     fi
 
     exec 1>&4 4>&-
-
-    chown $STEAM_USER:$STEAM_USER $file_cluster
 fi
 
 if [[ -f "$file_server" ]] && containsElement "server" $@ ; then
@@ -125,7 +123,9 @@ else
         conf "authentication_port" "$STEAM_AUTHENTICATION_PORT"
     fi
 
-    exec 1>&4 4>&-
+    echo
+    echo "[ACCOUNT]"
+    echo "encode_user_path = true"
 
-    chown $STEAM_USER:$STEAM_USER $file_server
+    exec 1>&4 4>&-
 fi

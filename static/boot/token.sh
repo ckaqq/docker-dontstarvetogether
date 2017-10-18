@@ -10,7 +10,6 @@ fi
 
 if [[ -n "$TOKEN" ]] ; then
     printf "$TOKEN" > $file_token
-    chown $STEAM_USER:$STEAM_USER $file_token
 else
     rm -f $file_token
 fi

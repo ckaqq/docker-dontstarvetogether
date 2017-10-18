@@ -14,7 +14,6 @@ create_list(){
 
     if [[ -n "$list" ]] ; then
         echo $list | tr , '\n' >$file
-        chown $STEAM_USER:$STEAM_USER $file
     fi
 }
 

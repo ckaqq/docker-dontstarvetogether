@@ -31,7 +31,3 @@ return {
 }
 EOF
 fi
-
-if [[ -f $file_leveldata_override ]]; then
-    chown $STEAM_USER:$STEAM_USER $file_world_override
-fi
