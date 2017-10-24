@@ -20,6 +20,7 @@ case "$@" in
 esac
 
 bin="$DSTA_HOME/bin/$1.sh"
+
 if [[ -f "$bin" ]]; then
     shift
     exec "$bin" "$@"

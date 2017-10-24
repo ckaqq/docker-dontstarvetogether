@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 usage() {
-    cat "$DSTA_HOME"/doc/update.usage
+    cat "$DSTA_HOME/doc/update.usage"
 }
 
 if [[ $# -eq 0 ]]; then

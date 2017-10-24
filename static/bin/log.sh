@@ -20,7 +20,7 @@ elif [[ $# -eq 1 ]]; then
     esac
 fi
 
-if [[ -n "$log" ]]; the
+if [[ -n "$log" ]]; then
     if [[ -f "$log" ]]; then
         exec cat "$log"
     fi

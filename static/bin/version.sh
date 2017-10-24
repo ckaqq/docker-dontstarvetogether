@@ -10,7 +10,7 @@ local_version() {
 
 upstream_version() {
     rm -rf "$STEAM_HOME/Steam/appcache/*"
-    steamcmd +login anonymous +app_info_update 1 +app_info_print 343050 +quit | clean_version
+    $STEAM_HOME/steamcmd.sh +login anonymous +app_info_update 1 +app_info_print 343050 +quit | clean_version
 }
 
 clean_version() {
