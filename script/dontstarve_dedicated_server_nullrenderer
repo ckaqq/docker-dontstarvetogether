@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[ -r $CLUSTER_PATH ] || mkfifo $CLUSTER_PATH/console
+[ -r $CLUSTER_PATH/console ] || mkfifo $CLUSTER_PATH/console
 
 # We must have at least one writer
 sleep infinity > "$CLUSTER_PATH/console" &
