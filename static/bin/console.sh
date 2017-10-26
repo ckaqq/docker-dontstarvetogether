@@ -8,13 +8,13 @@ if [[ "$1" = "--help" ]]; then
     usage
     exit 0
 elif [[ $# -eq 0 ]]; then
-    cat < /proc/self/fd/0 > "$DSTA_HOME/console"
+    cat < /proc/self/fd/0 > "$CLUSTER_PATH/console"
 else
     for command in "$@"; do
         if [[ "$command" = "-" ]]; then
-            cat < /proc/self/fd/0 > "$DSTA_HOME/console"
+            cat < /proc/self/fd/0 > "$CLUSTER_PATH/console"
         else
-            echo "$command" > "$DSTA_HOME/console"
+            echo "$command" > "$CLUSTER_PATH/console"
         fi
     done
 fi

@@ -41,7 +41,7 @@ COPY /script/* /usr/local/bin/
 COPY /static $DSTA_HOME
 
 # Create pipe for the game console.
-RUN mkfifo $DSTA_HOME/console
+# RUN mkfifo $DSTA_HOME/console
 
 # Copy entrypoint script.
 COPY /docker-entrypoint.sh /

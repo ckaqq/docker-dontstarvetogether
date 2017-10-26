@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+[ -r $CLUSTER_PATH ] || mkfifo $CLUSTER_PATH/console
+
 # We must have at least one writer
-sleep infinity > "$DSTA_HOME/console" &
+sleep infinity > "$CLUSTER_PATH/console" &
 
 cd "$DST_HOME/bin"
 
@@ -10,4 +12,4 @@ exec ./dontstarve_dedicated_server_nullrenderer \
     -conf_dir "." \
     -cluster "$(basename "$CLUSTER_PATH")" \
     -shard "$SHARD_NAME" \
-    "$@" < <({ stdbuf -oL cat "$DSTA_HOME/console" & stdbuf -oL cat & })
+    "$@" < <({ stdbuf -oL cat "$CLUSTER_PATH/console" & stdbuf -oL cat & })
