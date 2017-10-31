@@ -54,5 +54,6 @@ fi
 "$DSTA_HOME"/boot/lists.sh "$keep"
 "$DSTA_HOME"/boot/world.sh "$keep"
 "$DSTA_HOME"/boot/mods.sh "$keep"
+"$DSTA_HOME"/boot/log.sh "$keep"
 
 exec dontstarve_dedicated_server_nullrenderer "$flag"
